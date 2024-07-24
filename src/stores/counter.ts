@@ -131,6 +131,8 @@ export interface Counter {
   riichi_win_score: number;
   /// 立直总收支
   riichi_total_score: number;
+  /// 一发自摸次数
+  riichi_ippatsu_tsumo: number;
 
   /// 总收支
   total_score: number;
@@ -233,6 +235,7 @@ export function computedCounters(c: Counter) {
         riichiIppatsuRate: percentify(c.yakus[2] / c.riichi_win),
         riichiTsumoRate: percentify(c.yakus[0] / c.riichi_win),
         riichUra: percentify(c.yakus[53] / c.riichi_win),
+        riichiIppatsuTsumoRate: percentify(c.riichi_ippatsu_tsumo / c.riichi),
       },
     ],
     yakus: [

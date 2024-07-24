@@ -2,7 +2,7 @@
 members = ['libs/*']
 
 [workspace.package]
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Rika"]
 
@@ -11,10 +11,10 @@ authors = ["Rika"]
 
 [package]
 name = "tenhou-log-manager"
-version = "0.1.0"
-description = "A Tauri App"
-authors = ["Rika"]
-edition = "2021"
+version.workspace = true
+description = "This is a simple tool to record and analyze Tenhou mahjong games. It can analyse the game logs and provide some statistics about your performance."
+authors.workspace = true
+edition.workspace = true
 
 [build-dependencies]
 tauri-build = { version = "2.0.0-beta", features = [] }

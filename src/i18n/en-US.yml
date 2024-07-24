@@ -86,6 +86,7 @@ data:
     riichiIppatsuRate: Ippatsu Rate
     riichiTsumoRate: Riichi Tsumo Rate
     riichUra: Ura-dora Rate
+    riichiIppatsuTsumoRate: Ippatsu Tsumo Rate
   yakus:
     _title: Yaku Types
     menzeTsumo: Menzen Tsumo

@@ -118,6 +118,8 @@ pub struct Counter {
     pub riichi_win_score: u64,
     /// 立直总收支
     pub riichi_total_score: i64,
+    /// 一发自摸次数
+    pub riichi_ippatsu_tsumo: u32,
 
     /// 总收支
     pub total_score: i64,

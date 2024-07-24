@@ -86,6 +86,7 @@ data:
     riichiIppatsuRate: 一発率
     riichiTsumoRate: 立直自摸率
     riichUra: 裏ドラ率
+    riichiIppatsuTsumoRate: 一発自摸率
   yakus:
     _title: 役種
     menzeTsumo: 門前自摸

@@ -343,6 +343,9 @@ impl Game {
                                 counter.riichi_win += 1;
                                 counter.riichi_win_score += score as u64;
                                 counter.riichi_total_score += diff_scores[i] as i64;
+                                if yaku.contains(&Yaku::Ippatsu.into()) && yaku.contains(&Yaku::MenzeTsumo.into()) {
+                                    counter.riichi_ippatsu_tsumo += 1;
+                                }
                             }
                             counter.yakus.iter_mut().enumerate().for_each(|(i, x)| {
                                 if yaku.contains(&(i as u8)) {
