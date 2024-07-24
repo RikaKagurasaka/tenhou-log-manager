@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+SC:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+SC:wght@100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+:root,
+#app {
+  @apply h-full w-full overflow-hidden;
+  font-optical-sizing: auto;
+}
+
+html {
+  font-family: "Noto Sans SC", "Noto Sans JP", sans-serif;
+  &[lang^="ja"] {
+    font-family: "Noto Sans JP", "Noto Sans SC", sans-serif;
+  }
+}
+
+p {
+  @apply select-none;
+}

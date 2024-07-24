@@ -1,0 +1,111 @@
+window:
+  title: 天凤牌谱分析
+common:
+  confirm: 确定
+navbar:
+  import: 导入
+  data: 数据
+  about: 关于
+importView:
+  prompt: 请在以下的输入框中输入天凤牌谱链接或编号，以任意方式分隔或不分隔。
+  btnText: 没有找到牌谱 | 导入 1 条 | 导入 {count} 条
+  autoImportTitle: 从 Tenhou Desktop4K 或 Tenhou Web 导入牌谱
+  autoImportDesc: 如果你在本机上使用 Microsoft Edge、Google Chrome 或 Mozillia Firefox 在 Tenhou Desktop4K 或 Tenhou Web 进行游戏，点击下面的按钮自动读取本机上的牌谱数据。
+  autoImportBtnText: 自动读取
+  autoImportHint: 该方法不保证能完全扫描到所有的数据，如果出现问题可以提issue。
+  importModalText:
+    success: "{count} 条导入成功"
+    skip: "{count} 条已存在"
+    fail: "{count} 条导入失败"
+  importModalError: 导入失败，错误信息：{msg}
+userIdSet:
+  prompt: 请输入您的天凤用户名
+data:
+  basic:
+    _title: 基础
+    matches: 场数
+    rounds: 局数
+    roundIo: 局收支
+    netIo: 净打点
+    stableRate: 安定R值
+    rank1Rate: 一位率
+    rank2Rate: 二位率
+    rank3Rate: 三位率
+    rank4Rate: 四位率
+    flyRate: 被飞率
+    winRate: 和牌率
+    loseRate: 放铳率
+    drawRate: 流局率
+    noChangeRate: 横移动率
+    winLossDiff: 和铳差
+    riichiRate: 立直率
+    furoRate: 副露率
+    damaronRate: 默和率
+    drawTenpaiRate: 流听率
+    tsumoRate: 自摸率
+  winLoss:
+    _title: 和铳
+    winRate: 和牌率
+    tsumoRate: 自摸率
+    ronRate: 荣和率
+    winScore: 平均打点
+    winJunme: 和牌平均巡目
+    winRiichiRate: 和牌时立直率
+    winDamaRate: 和牌时默和率
+    winFuroRate: 和牌时副露率
+    winOyaRate: 和牌时亲率
+    winKoRate: 和牌时子率
+    loseRate: 放铳率
+    loseScore: 平均铳点
+    loseJunme: 放铳平均巡目
+    lossToRiichRate: 放铳至立直占比
+    lossToDamaRate: 放铳至默听占比
+    lossToFuroRate: 放铳至副露占比
+    loseKoToOyaRate: 放铳时子对亲占比
+    loseKoToKoRate: 放铳时子对子占比
+    loseOyaToKoRate: 放铳时亲对子占比
+    loseRiichiRate: 放铳时立直占比
+    loseMenzenRate: 放铳时门前占比
+    loseFuroRate: 放铳时副露占比
+  riichi:
+    _title: 立直
+    riichRate: 立直率
+    dblRiichiRate: 两立直占比
+    riichScore: 立直平均打点
+    riichCost: 立直支出
+    riichIo: 立直收支
+    riichWinRate: 立直和牌率
+    riichLoseRate: 立直放铳率
+    riichBeTsumoRate: 立直被自摸率
+    riichDrawRate: 立直流局率
+    riichFirstRate: 先制率
+    riichFollowRate: 追立率
+    riichFollowedRate: 被追立率
+    riichJunme: 立直平均巡目
+    riichiIppatsuRate: 一发率
+    riichiTsumoRate: 立直自摸率
+    riichUra: 里宝率
+  yakus:
+    _title: 役种
+    menzeTsumo: 门前自摸
+    riichi: 立直
+    ippatsu: 一发
+    pinfu: 平和
+    tanyao: 断幺
+    jikaze: 自风
+    bakaze: 场风
+    yakuhai: 三元牌
+    dora: 表宝牌
+    uraDora: 里宝牌
+    akaDora: 赤宝牌
+    chiitoi: 七对子
+    toitoi: 对对和
+    honitsu: 混一色
+    chinitsu: 清一色
+    ippeiko: 一杯口
+    chanta: 混全带幺九
+    ittsu: 一气通贯
+    sanshoku: 三色同顺
+    junchan: 纯全带幺九
+about:
+  title: 关于

@@ -1,0 +1,13 @@
+navbar:
+  import: インポート
+  data: データ
+importView:
+  prompt: 以下の入力フィールドに天鳳の牌譜リンクまたは番号を入力してください。任意の方法で区切るか、区切らずに入力できます。
+  btnText: 牌譜が見つかりません | 1件インポート | {count}件インポート
+  autoImportTitle: Tenhou Desktop4K または Tenhou Web から牌譜をインポート
+  autoImportDesc: Microsoft Edge、Google Chrome、または Mozillia Firefox を使用して本機で Tenhou
+    Desktop4K または Tenhou Web でゲームをプレイしている場合、以下のボタンをクリックして本機の牌譜データを自動で読み取ります。
+  autoImportBtnText: 自動読み取り
+  autoImportHint: この方法ではすべてのデータを完全にスキャンできるとは限りません。問題が発生した場合はissueを提起してください。
+  importModalText: 成功 {count1} 件インポートされました。 {count2} 件は既に存在しています。 {count3} 件のインポートに失敗しました。
+  importModalError: インポートに失敗しました。エラーメッセージ：{msg}

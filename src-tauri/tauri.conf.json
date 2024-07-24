@@ -1,0 +1,32 @@
+{
+  "productName": "tenhou-log-manager",
+  "identifier": "link.rika.tenhoulogmanager",
+  "build": {
+    "beforeDevCommand": "yarn dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "yarn build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "tenhou-log-manager",
+        "width": 1600,
+        "height": 1000
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/icon.ico",
+      "icons/icon@0.5x.ico",
+      "icons/icon@0.25x.ico",
+      "icons/icon@0.1x.ico"
+    ]
+  }
+}

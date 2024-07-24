@@ -1,0 +1,9 @@
+[package]
+name = "tenhou-parser"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+
+[dependencies]
+quick-xml = "0.36.0"
+urlencoding = "2.1.3"

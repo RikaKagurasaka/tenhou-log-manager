@@ -1,0 +1,9 @@
+[package]
+name = "maj-analyser"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+
+[dependencies]
+tenhou-parser = { path = "../tenhou-parser" }
+serde = { version = "1.0.204", features = ["derive"] }
