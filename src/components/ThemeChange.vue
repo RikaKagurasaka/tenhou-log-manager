@@ -15,8 +15,8 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { useLocalStorage } from "@vueuse/core";
 import { watch } from "vue";
 
-const theme = useLocalStorage("theme", "light");
-
+const theme = useLocalStorage("theme", window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+document.documentElement.setAttribute("data-theme", theme.value);
 watch(theme, (value) => {
   document.documentElement.setAttribute("data-theme", value);
 });

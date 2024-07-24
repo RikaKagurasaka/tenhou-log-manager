@@ -20,7 +20,7 @@ export const router = createRouter({
     },
     {
       path: "/",
-      redirect: (to) => {
+      redirect: (_to) => {
         const userId = localStorage.getItem("userId");
         if (userId) {
           return "/data";

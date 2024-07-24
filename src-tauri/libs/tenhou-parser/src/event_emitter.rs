@@ -65,7 +65,7 @@ pub fn parse_file_iter(path: impl AsRef<Path>) -> EventEmitter<BufReader<File>> 
 
 pub fn guess_user_id(path: impl AsRef<Path>) -> Option<String> {
     let mut user_id_counter: HashMap<String, u64> = HashMap::new();
-    path.as_ref().read_dir().unwrap().for_each(|entry| {
+    path.as_ref().read_dir().ok()?.for_each(|entry| {
         let entry = entry.unwrap();
         let path = entry.path();
         let _path_str = path.to_str().unwrap().to_string();

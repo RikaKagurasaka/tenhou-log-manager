@@ -4,11 +4,15 @@ import { defineStore } from "pinia";
 
 export const useCounterStore = defineStore("counter", () => {
   const userId = useLocalStorage("userId", "");
-  if (!userId.value) return { counter: null };
-  const { state } = useAsyncState(() => invoke<Counter>("parse_logs", { id: userId.value }), undefined);
-  return {
-    counter: state,
-  };
+  const { state } = useAsyncState(async () => {
+    if (userId) {
+      let rs = await invoke<Counter>("parse_logs", { id: userId.value });
+      return computedCounters(rs);
+    } else {
+      return null;
+    }
+  }, undefined);
+  return state;
 });
 
 export interface Counter {
@@ -141,10 +145,10 @@ export interface Counter {
   tot_rate: number;
 }
 
-export function computedCounters(c: Counter) {
-  if ((c.matches || 0) == 0) {
-    return null;
-  }
+export function computedCounters(c: Counter | undefined) {
+  console.log(c);
+
+  if (!c || c.matches === 0) return null;
   return {
     basic: [
       {

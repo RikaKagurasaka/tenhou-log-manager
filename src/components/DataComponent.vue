@@ -24,20 +24,25 @@
         </div>
       </div>
     </div>
+    <div v-else class="flex-1 flex items-center justify-center max-w-full" style="width: 90em">
+      <span class="loading loading-lg"></span>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { reactify, useLocalStorage } from "@vueuse/core";
+import { useAsyncState, useLocalStorage } from "@vueuse/core";
 import { useI18n } from "vue-i18n";
 import { computedCounters, Counter } from "../stores/counter";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
-import { computed } from "vue";
-const counter = defineProps<Partial<Counter>>();
-const calculated = computed(() => computedCounters(counter as Counter));
+import { invoke } from "@tauri-apps/api/core";
 const { t } = useI18n();
 const userId = useLocalStorage("userId", "");
+let { state: calculated } = useAsyncState(
+  invoke<Counter>("parse_logs", { id: userId.value }).then((c) => computedCounters(c)),
+  null
+);
 </script>
 
 <style scoped>

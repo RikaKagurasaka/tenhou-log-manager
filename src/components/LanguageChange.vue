@@ -3,7 +3,7 @@
     <div tabindex="0" role="button" class="btn m-1">{{ locale2letters(locale) }}</div>
     <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-full shadow p-1">
       <template v-for="l in availableLocales" :key="l">
-        <li v-if="l !== locale">
+        <li v-if="locale2letters(l) !== locale2letters(locale)">
           <a @click="locale = l">{{ locale2letters(l) }}</a>
         </li>
       </template>
