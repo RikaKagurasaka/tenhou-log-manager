@@ -1,13 +1,111 @@
+window:
+  title: 天鳳牌譜分析
+common:
+  confirm: 確定
 navbar:
   import: インポート
   data: データ
+  about: アバウト
 importView:
-  prompt: 以下の入力フィールドに天鳳の牌譜リンクまたは番号を入力してください。任意の方法で区切るか、区切らずに入力できます。
-  btnText: 牌譜が見つかりません | 1件インポート | {count}件インポート
+  prompt: 以下の入力ボックスに天鳳牌譜のリンクまたは番号を入力してください。任意の方法で区切るか、区切らずに入力してください。
+  btnText: 牌譜が見つかりませんでした | 1件をインポート | {count}件をインポート
   autoImportTitle: Tenhou Desktop4K または Tenhou Web から牌譜をインポート
-  autoImportDesc: Microsoft Edge、Google Chrome、または Mozillia Firefox を使用して本機で Tenhou
-    Desktop4K または Tenhou Web でゲームをプレイしている場合、以下のボタンをクリックして本機の牌譜データを自動で読み取ります。
-  autoImportBtnText: 自動読み取り
-  autoImportHint: この方法ではすべてのデータを完全にスキャンできるとは限りません。問題が発生した場合はissueを提起してください。
-  importModalText: 成功 {count1} 件インポートされました。 {count2} 件は既に存在しています。 {count3} 件のインポートに失敗しました。
+  autoImportDesc: もし Microsoft Edge、Google Chrome、Mozilla Firefox を使用して Tenhou Desktop4K または Tenhou Web でゲームをしている場合、以下のボタンをクリックして自動的にローカルの牌譜データを読み込みます。
+  autoImportBtnText: 自動読み込み
+  autoImportHint: この方法ではすべてのデータを完全にスキャンすることは保証されません。問題が発生した場合は issue を提起してください。
+  importModalText:
+    success: "{count}件が正常にインポートされました"
+    skip: "{count}件はすでに存在します"
+    fail: "{count}件のインポートに失敗しました"
   importModalError: インポートに失敗しました。エラーメッセージ：{msg}
+userIdSet:
+  prompt: 天鳳ユーザー名を入力してください
+data:
+  basic:
+    _title: 基本
+    matches: 対戦数
+    rounds: 局数
+    roundIo: 局収支
+    netIo: 調整打点
+    stableRate: 安定Rate
+    rank1Rate: 一位率
+    rank2Rate: 二位率
+    rank3Rate: 三位率
+    rank4Rate: 四位率
+    flyRate: 飛び率
+    winRate: 和了率
+    loseRate: 放銃率
+    drawRate: 流局率
+    noChangeRate: 横移動率
+    winLossDiff: 和了放銃差
+    riichiRate: 立直率
+    furoRate: 副露率
+    damaronRate: ダマ和了率
+    drawTenpaiRate: 流局聴牌率
+    tsumoRate: 自摸率
+  winLoss:
+    _title: 和了と放銃
+    winRate: 和了率
+    tsumoRate: 自摸率
+    ronRate: 栄和率
+    winScore: 平均点数
+    winJunme: 和了平均巡目
+    winRiichiRate: 和了時立直率
+    winDamaRate: 和了時ダマ率
+    winFuroRate: 和了時副露率
+    winOyaRate: 和了時親率
+    winKoRate: 和了時子率
+    loseRate: 放銃率
+    loseScore: 平均放銃点
+    loseJunme: 放銃平均巡目
+    lossToRiichRate: 立直への放銃
+    lossToDamaRate: ダマへの放銃
+    lossToFuroRate: 副露への放銃
+    loseKoToOyaRate: 子が親への放銃
+    loseKoToKoRate: 子が子への放銃
+    loseOyaToKoRate: 親が子への放銃
+    loseRiichiRate: 放銃時立直
+    loseMenzenRate: 放銃時門前
+    loseFuroRate: 放銃時副露
+  riichi:
+    _title: 立直
+    riichRate: 立直率
+    dblRiichiRate: 両立直占比
+    riichScore: 立直平均点数
+    riichCost: 立直支出
+    riichIo: 立直収支
+    riichWinRate: 立直和了率
+    riichLoseRate: 立直放銃率
+    riichBeTsumoRate: 立直被自摸率
+    riichDrawRate: 立直流局率
+    riichFirstRate: 先制率
+    riichFollowRate: 追っかけ率
+    riichFollowedRate: 追っかけられ率
+    riichJunme: 立直平均巡目
+    riichiIppatsuRate: 一発率
+    riichiTsumoRate: 立直自摸率
+    riichUra: 裏ドラ率
+  yakus:
+    _title: 役種
+    menzeTsumo: 門前自摸
+    riichi: 立直
+    ippatsu: 一発
+    pinfu: 平和
+    tanyao: 断么
+    jikaze: 自風
+    bakaze: 場風
+    yakuhai: 三元牌
+    dora: 表ドラ
+    uraDora: 裏ドラ
+    akaDora: 赤ドラ
+    chiitoi: 七対子
+    toitoi: 対々和
+    honitsu: 混一色
+    chinitsu: 清一色
+    ippeiko: 一盃口
+    chanta: 混全帯么九
+    ittsu: 一気通貫
+    sanshoku: 三色同順
+    junchan: 純全帯么九
+about:
+  title: アバウト

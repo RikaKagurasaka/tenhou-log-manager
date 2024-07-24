@@ -13,6 +13,13 @@
       <label>License</label>
       <span>MIT</span>
     </div>
+    <div class="text-xl flex gap-4 mt-4">
+      <p>
+        <a class="btn btn-ghost btn-circle" href="https://github.com/RikaKagurasaka/tenhou-log-manager" target="_blank">
+          <FontAwesomeIcon :icon="faGithub" class="text-2xl" />
+        </a>
+      </p>
+    </div>
   </div>
 </template>
 
@@ -22,6 +29,8 @@ import { useI18n } from "vue-i18n";
 import logo from "@/assets/logo.png";
 import { getVersion } from "@tauri-apps/api/app";
 import { useAsyncState } from "@vueuse/core";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+
 const { state: version } = useAsyncState(getVersion(), "...");
 const { t } = useI18n();
 </script>
@@ -32,7 +41,7 @@ const { t } = useI18n();
   & > * {
     @apply p-2;
   }
-  & > label{
+  & > label {
     @apply font-bold;
   }
 }

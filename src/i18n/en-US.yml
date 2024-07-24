@@ -1,0 +1,111 @@
+window:
+  title: Tenhou Paifu Analyzer
+common:
+  confirm: Confirm
+navbar:
+  import: Import
+  data: Data
+  about: About
+importView:
+  prompt: Please enter the Tenhou game record link or ID in the input box below, separated or not separated in any way.
+  btnText: No records found | Import 1 record | Import {count} records
+  autoImportTitle: Import game records from Tenhou Desktop4K or Tenhou Web
+  autoImportDesc: If you are playing on Tenhou Desktop4K or Tenhou Web using Microsoft Edge, Google Chrome, or Mozilla Firefox on this machine, click the button below to automatically read the game record data on this machine.
+  autoImportBtnText: Auto Read
+  autoImportHint: This method does not guarantee that all data will be completely scanned. If there are any issues, please submit an issue.
+  importModalText:
+    success: "{count} record imported successfully | {count} records imported successfully"
+    skip: "{count} record already exist | {count} records already exist"
+    fail: "{count} record failed to import | {count} records failed to import"
+  importModalError: "Import failed, error message: {msg}"
+userIdSet:
+  prompt: Please enter your Tenhou username
+data:
+  basic:
+    _title: Basic
+    matches: Number of Matches
+    rounds: Number of Rounds
+    roundIo: Round Income/Outcome
+    netIo: Net Points
+    stableRate: Stability R-value
+    rank1Rate: First Place Rate
+    rank2Rate: Second Place Rate
+    rank3Rate: Third Place Rate
+    rank4Rate: Fourth Place Rate
+    flyRate: Bust Rate
+    winRate: Win Rate
+    loseRate: Discard Rate
+    drawRate: Draw Rate
+    noChangeRate: No Change Rate
+    winLossDiff: Win-Loss Difference
+    riichiRate: Riichi Rate
+    furoRate: Open Meld Rate
+    damaronRate: Closed Ron Rate
+    drawTenpaiRate: Draw Tenpai Rate
+    tsumoRate: Tsumo Rate
+  winLoss:
+    _title: Win/Loss
+    winRate: Win Rate
+    tsumoRate: Tsumo Rate
+    ronRate: Ron Rate
+    winScore: Average Win Points
+    winJunme: Average Win Turn
+    winRiichiRate: Riichi Rate at Win
+    winDamaRate: Closed Ron Rate at Win
+    winFuroRate: Open Meld Rate at Win
+    winOyaRate: Win as Dealer Rate
+    winKoRate: Win as Non-dealer Rate
+    loseRate: Discard Rate
+    loseScore: Average Discard Points
+    loseJunme: Average Discard Turn
+    lossToRiichRate: Discard to Riichi Rate
+    lossToDamaRate: Discard to Closed Tenpai Rate
+    lossToFuroRate: Discard to Open Meld Rate
+    loseKoToOyaRate: Non-dealer Discard to Dealer Rate
+    loseKoToKoRate: Non-dealer Discard to Non-dealer Rate
+    loseOyaToKoRate: Dealer Discard to Non-dealer Rate
+    loseRiichiRate: Discard to Riichi Rate
+    loseMenzenRate: Discard to Closed Hand Rate
+    loseFuroRate: Discard to Open Meld Rate
+  riichi:
+    _title: Riichi
+    riichRate: Riichi Rate
+    dblRiichiRate: Double Riichi Rate
+    riichScore: Average Riichi Points
+    riichCost: Riichi Cost
+    riichIo: Riichi Income/Outcome
+    riichWinRate: Riichi Win Rate
+    riichLoseRate: Riichi Discard Rate
+    riichBeTsumoRate: Riichi Be Tsumo Rate
+    riichDrawRate: Riichi Draw Rate
+    riichFirstRate: First Riichi Rate
+    riichFollowRate: Follow Riichi Rate
+    riichFollowedRate: Be Followed Riichi Rate
+    riichJunme: Average Riichi Turn
+    riichiIppatsuRate: Ippatsu Rate
+    riichiTsumoRate: Riichi Tsumo Rate
+    riichUra: Ura-dora Rate
+  yakus:
+    _title: Yaku Types
+    menzeTsumo: Menzen Tsumo
+    riichi: Riichi
+    ippatsu: Ippatsu
+    pinfu: Pinfu
+    tanyao: Tanyao
+    jikaze: Seat Wind
+    bakaze: Prevalent Wind
+    yakuhai: Dragon Tiles
+    dora: Dora
+    uraDora: Ura-dora
+    akaDora: Red Dora
+    chiitoi: Chiitoitsu
+    toitoi: Toitoi
+    honitsu: Honitsu
+    chinitsu: Chinitsu
+    ippeiko: Iipeikou
+    chanta: Chanta
+    ittsu: Ittsu
+    sanshoku: Sanshoku Doujun
+    junchan: Junchan
+about:
+  title: About

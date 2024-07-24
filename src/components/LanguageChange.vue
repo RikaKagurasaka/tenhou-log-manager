@@ -13,10 +13,13 @@
 
 <script setup lang="ts">
 import { window } from "@tauri-apps/api";
+import { useLocalStorage } from "@vueuse/core";
 import { onMounted, Ref, toValue, watch } from "vue";
 import { useI18n } from "vue-i18n";
 
 const { t, locale, availableLocales } = useI18n();
+const localeLs = useLocalStorage("locale", locale);
+locale.value = localeLs.value;
 onMounted(() => {
   document.documentElement.lang = locale.value;
   window.Window.getCurrent().setTitle(t("window.title"));

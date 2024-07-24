@@ -23,11 +23,11 @@
 
   <dialog id="importModal" class="modal">
     <div class="modal-box">
-      <p class="py-4" v-if="!downlodedResults[1]">
-        <p>{{ t("importView.importModalText.success",{count:downlodedResults[0][0]}) }}</p>
-        <p>{{ t("importView.importModalText.skip",{count:downlodedResults[0][1]}) }}</p>
-        <p>{{ t("importView.importModalText.fail",{count:downlodedResults[0][2]}) }}</p>
-      </p>
+      <div class="py-4" v-if="!downlodedResults[1]">
+        <p>{{ t("importView.importModalText.success", { count: downlodedResults[0][0], plural: downlodedResults[0][0] }) }}</p>
+        <p>{{ t("importView.importModalText.skip", { count: downlodedResults[0][1], plural: downlodedResults[0][1] }) }}</p>
+        <p>{{ t("importView.importModalText.fail", { count: downlodedResults[0][2], plural: downlodedResults[0][2] }) }}</p>
+      </div>
       <p class="py-4" v-else>
         {{ t("importView.importModalError", { msg: downlodedResults[1] }) }}
       </p>
