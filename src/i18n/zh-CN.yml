@@ -21,6 +21,7 @@ importView:
 userIdSet:
   prompt: 请输入您的天凤用户名
 data:
+  empty: 没有数据……先在左上方导入牌谱吧！
   basic:
     _title: 基础
     matches: 场数

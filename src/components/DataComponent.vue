@@ -9,7 +9,7 @@
         <FontAwesomeIcon :icon="faEdit" />
       </button>
     </p>
-    <div class="grid grid-cols-1 p-4 gap-4 overflow-auto flex-1" v-if="calculated">
+    <div class="grid grid-cols-1 p-4 gap-4 overflow-auto flex-1" v-if="!isEmpty && calculated">
       <div class="card" v-for="(o, key) in calculated">
         <div>
           {{ t(`data.${key}._title`) }}
@@ -24,8 +24,11 @@
         </div>
       </div>
     </div>
-    <div v-else class="flex-1 flex items-center justify-center max-w-full" style="width: 90em">
+    <div v-else-if="!calculated && !isEmpty" class="flex-1 flex items-center justify-center max-w-full" style="width: 90em">
       <span class="loading loading-lg"></span>
+    </div>
+    <div v-else class="flex-1 flex items-center justify-center max-w-full" style="width: 90em">
+      <p class="text-2xl">{{ t("data.empty") }}</p>
     </div>
   </div>
 </template>
@@ -37,10 +40,20 @@ import { computedCounters, Counter } from "../stores/counter";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { invoke } from "@tauri-apps/api/core";
+import { ref } from "vue";
 const { t } = useI18n();
 const userId = useLocalStorage("userId", "");
+const isEmpty = ref(false);
 let { state: calculated } = useAsyncState(
-  invoke<Counter>("parse_logs", { id: userId.value }).then((c) => computedCounters(c)),
+  invoke<Counter>("parse_logs", { id: userId.value }).then((c) => {
+    if (!c) return null;
+    if (c.matches == 0) {
+      isEmpty.value = true;
+      return null;
+    } else {
+      return computedCounters(c);
+    }
+  }),
   null
 );
 </script>

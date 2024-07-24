@@ -145,10 +145,7 @@ export interface Counter {
   tot_rate: number;
 }
 
-export function computedCounters(c: Counter | undefined) {
-  console.log(c);
-
-  if (!c || c.matches === 0) return null;
+export function computedCounters(c: Counter) {
   return {
     basic: [
       {

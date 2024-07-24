@@ -21,6 +21,7 @@ importView:
 userIdSet:
   prompt: Please enter your Tenhou username
 data:
+  empty: No data... Import game records on the top left first!
   basic:
     _title: Basic
     matches: Number of Matches

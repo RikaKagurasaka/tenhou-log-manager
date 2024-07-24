@@ -21,6 +21,7 @@ importView:
 userIdSet:
   prompt: 天鳳ユーザー名を入力してください
 data:
+  empty: データがありません... まず左上にあるメニューから牌譜をインポートしてください！
   basic:
     _title: 基本
     matches: 対戦数
