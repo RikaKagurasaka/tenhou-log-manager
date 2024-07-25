@@ -245,7 +245,7 @@ impl Game {
                         if i == actor {
                             counter.riichi += 1;
                             counter.riichi_double +=
-                                if junme <= 0 && naki_arr.iter().all(|&x| x == 0) {
+                                if junme <= 1 && naki_arr.iter().all(|&x| x == 0) {
                                     1
                                 } else {
                                     0
