@@ -1,6 +1,5 @@
 pub mod counter;
 pub mod game;
-pub mod yaku;
 
 #[cfg(test)]
 mod tests {

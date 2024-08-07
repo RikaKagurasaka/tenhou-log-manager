@@ -68,6 +68,8 @@ data:
     loseRiichiRate: 放铳时立直占比
     loseMenzenRate: 放铳时门前占比
     loseFuroRate: 放铳时副露占比
+    beTsumoOyaManganRate: 被炸满贯率
+    beTsumoOyaManganScore: 被炸平均点数
   riichi:
     _title: 立直
     riichRate: 立直率

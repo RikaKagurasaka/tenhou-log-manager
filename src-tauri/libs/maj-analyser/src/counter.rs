@@ -1,5 +1,5 @@
 use serde::{Serialize, Serializer};
-use crate::yaku::Yaku;
+use pai::yaku::Yaku;
 
 #[derive(Debug, Serialize, Default, Clone)]
 pub struct Counter {
@@ -25,6 +25,8 @@ pub struct Counter {
     pub win_tsumo: u32,
     /// 荣和次数
     pub win_ron: u32,
+    /// 和了净点数
+    pub win_score: i64,
     /// 和了总点数
     pub win_total_score: i64,
     /// 和了总巡目
@@ -42,6 +44,8 @@ pub struct Counter {
 
     /// 放铳次数
     pub loses: u32,
+    /// 放铳净点数
+    pub lose_score: i64,
     /// 放铳总点数
     pub lose_total_score: i64,
     /// 放铳总巡目
@@ -69,6 +73,14 @@ pub struct Counter {
     pub be_tsumo: u32,
     /// 被自摸总点数
     pub be_tsumo_total_score: i64,
+    /// 庄家被自摸次数
+    pub be_tsumo_oya: u32,
+    /// 庄家被自摸总点数
+    pub be_tsumo_oya_total_score: i64,
+    /// 庄家被炸庄次数
+    pub be_tsumo_oya_mangan: u32,
+    /// 庄家被炸庄总点数
+    pub be_tsumo_oya_mangan_total_score: i64,
     /// 被自摸总巡目
     pub be_tsumo_total_junme: u32,
     /// 被自摸时立直次数

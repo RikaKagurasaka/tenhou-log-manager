@@ -38,6 +38,8 @@ export interface Counter {
   win_tsumo: number;
   /// 荣和次数
   win_ron: number;
+  /// 和了净点数
+  win_score: number;
   /// 和了总点数
   win_total_score: number;
   /// 和了总巡目
@@ -55,6 +57,8 @@ export interface Counter {
 
   /// 放铳次数
   loses: number;
+  /// 放铳净点数
+  lose_score: number;
   /// 放铳总点数
   lose_total_score: number;
   /// 放铳总巡目
@@ -82,6 +86,15 @@ export interface Counter {
   be_tsumo: number;
   /// 被自摸总点数
   be_tsumo_total_score: number;
+
+  /// 庄家被自摸次数
+  be_tsumo_oya: number;
+  /// 庄家被自摸总点数
+  be_tsumo_oya_total_score: number;
+  /// 庄家被炸庄次数
+  be_tsumo_oya_mangan: number;
+  /// 庄家被炸庄总点数
+  be_tsumo_oya_mangan_total_score: number;
   /// 被自摸总巡目
   be_tsumo_total_junme: number;
   /// 被自摸时立直次数
@@ -155,7 +168,7 @@ export function computedCounters(c: Counter) {
         rounds: c.rounds,
         stableRate: Math.round((c.tot_rate / c.matches) * 40),
         roundIo: Math.round((c.total_score / c.rounds) * 100) / 100,
-        netIo: Math.round((c.win_total_score + c.lose_total_score) / c.rounds),
+        netIo: Math.round((c.win_score + c.lose_score) / c.rounds),
       },
       {
         rank1Rate: percentify(c.rank1 / c.matches),
@@ -184,7 +197,7 @@ export function computedCounters(c: Counter) {
         winRate: percentify(c.wins / c.rounds),
         tsumoRate: percentify(c.win_tsumo / c.wins),
         ronRate: percentify(c.win_ron / c.wins),
-        winScore: Math.round(c.win_total_score / c.wins),
+        winScore: Math.round(c.win_score / c.wins),
         winJunme: Math.round((c.win_total_junme / c.wins) * 100) / 100,
       },
       {
@@ -196,7 +209,7 @@ export function computedCounters(c: Counter) {
       },
       {
         loseRate: percentify(c.loses / c.rounds),
-        loseScore: Math.round(c.lose_total_score / c.loses),
+        loseScore: Math.round(c.lose_score / c.loses),
         loseJunme: Math.round((c.lose_total_junme / c.loses) * 100) / 100,
         loseRiichiRate: percentify(c.lose_riichi / c.loses),
         loseMenzenRate: percentify(c.lose_menzen / c.loses),
@@ -209,6 +222,12 @@ export function computedCounters(c: Counter) {
         lossToRiichRate: percentify(c.lose_to_riichi / c.loses),
         lossToDamaRate: percentify(c.lose_to_dama / c.loses),
         lossToFuroRate: percentify(c.lose_to_furo / c.loses),
+      },
+      {
+        beTsumoOyaManganRate: percentify(c.be_tsumo_oya_mangan / c.be_tsumo),
+      },
+      {
+        beTsumoOyaManganScore: Math.round(c.be_tsumo_oya_mangan_total_score / c.be_tsumo_oya_mangan),
       },
     ],
     riichi: [

@@ -1,0 +1,9 @@
+[package]
+name = "pai"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+
+[dependencies]
+strum = { workspace = true }
+strum_macros = { workspace = true }

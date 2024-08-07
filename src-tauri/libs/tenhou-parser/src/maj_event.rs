@@ -1,6 +1,7 @@
 use crate::utils::{GetAttribute, IntoActor, IntoNumVec};
 use quick_xml::events::BytesStart;
 use std::convert::TryInto;
+use strum_macros::{EnumIs, EnumTryAs};
 use urlencoding::decode;
 
 type Pai = u8;
@@ -59,6 +60,7 @@ impl GoType {
 }
 
 #[derive(Debug, Clone, Default)]
+#[derive(EnumIs,EnumTryAs)]
 pub enum MajEvent {
     #[default]
     Unknown,

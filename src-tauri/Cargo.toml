@@ -7,6 +7,14 @@ edition = "2021"
 authors = ["Rika"]
 
 [workspace.dependencies]
+cargo-profiler = "0.1.0"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+chrono = "0.4.38"
+kdam = "0.5.2"
+strum = { version = "0.26.3" ,features = ["derive"] }
+strum_macros = "0.26.4"
+lazy_static = "1.5.0"
 
 
 [package]
@@ -22,8 +30,8 @@ tauri-build = { version = "2.0.0-beta", features = [] }
 [dependencies]
 tauri = { version = "2.0.0-beta", features = [] }
 tauri-plugin-shell = "2.0.0-beta"
-serde = { version = "1", features = ["derive"] }
-serde_json = "1"
+serde = { workspace = true }
+serde_json = { workspace = true }
 browser-ls-reader = { path = "libs/browser-ls-reader" }
 tenhou-logs-downloader = { path = "libs/tenhou-logs-downloader" }
 maj-analyser = { path = "libs/maj-analyser" }

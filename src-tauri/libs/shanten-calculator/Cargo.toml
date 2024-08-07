@@ -1,0 +1,11 @@
+[package]
+name = "shanten-calculator"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+
+[dependencies]
+chrono = { workspace = true }
+kdam = { workspace = true }
+bincode = { version = "2.0.0-rc.3", features = ["derive"] }
+pai = {path = "../pai"}

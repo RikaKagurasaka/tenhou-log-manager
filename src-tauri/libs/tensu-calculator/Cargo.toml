@@ -1,10 +1,9 @@
 [package]
-name = "maj-analyser"
+name = "tensu-calculator"
 version.workspace = true
 edition.workspace = true
 authors.workspace = true
 
 [dependencies]
-tenhou-parser = { path = "../tenhou-parser" }
-serde = { workspace = true }
 pai = {path = "../pai"}
+lazy_static = {workspace = true}
