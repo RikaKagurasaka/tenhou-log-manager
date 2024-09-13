@@ -34,6 +34,7 @@ data:
     rank3Rate: 三位率
     rank4Rate: 四位率
     flyRate: 被飞率
+    avgRank: 平均顺位
     winRate: 和牌率
     loseRate: 放铳率
     drawRate: 流局率

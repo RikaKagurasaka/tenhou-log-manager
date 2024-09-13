@@ -282,7 +282,7 @@ impl<'a> ToMajEvent for &BytesStart<'a> {
                     .iter()
                     .map(|&x: &i32| x * 100)
                     .collect::<Vec<i32>>();
-                let after_scores: [i32; 4] = score_arr
+                let before_scores: [i32; 4] = score_arr
                     .iter()
                     .step_by(2)
                     .cloned()
@@ -294,6 +294,13 @@ impl<'a> ToMajEvent for &BytesStart<'a> {
                     .skip(1)
                     .step_by(2)
                     .cloned()
+                    .collect::<Vec<i32>>()
+                    .try_into()
+                    .unwrap();
+                let after_scores = before_scores
+                    .iter()
+                    .zip(diff_scores.iter())
+                    .map(|(x, y)| x + y)
                     .collect::<Vec<i32>>()
                     .try_into()
                     .unwrap();
@@ -412,7 +419,7 @@ impl<'a> ToMajEvent for &BytesStart<'a> {
                     .collect::<Vec<i32>>()
                     .try_into()
                     .unwrap();
-                let after_scores: [i32; 4] = scores_arr
+                let before_scores: [i32; 4] = scores_arr
                     .iter()
                     .step_by(2)
                     .cloned()
@@ -424,6 +431,13 @@ impl<'a> ToMajEvent for &BytesStart<'a> {
                     .skip(1)
                     .step_by(2)
                     .cloned()
+                    .collect::<Vec<i32>>()
+                    .try_into()
+                    .unwrap();
+                let after_scores = before_scores
+                    .iter()
+                    .zip(diff_scores.iter())
+                    .map(|(x, y)| x + y)
                     .collect::<Vec<i32>>()
                     .try_into()
                     .unwrap();

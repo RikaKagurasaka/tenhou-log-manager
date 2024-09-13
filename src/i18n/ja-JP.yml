@@ -34,6 +34,7 @@ data:
     rank3Rate: 三位率
     rank4Rate: 四位率
     flyRate: 飛び率
+    avgRank: 平均順位
     winRate: 和了率
     loseRate: 放銃率
     drawRate: 流局率
@@ -68,6 +69,8 @@ data:
     loseRiichiRate: 放銃時立直
     loseMenzenRate: 放銃時門前
     loseFuroRate: 放銃時副露
+    beTsumoOyaManganRate: 痛い親かぶり率
+    beTsumoOyaManganScore: 痛い親かぶり平均
   riichi:
     _title: 立直
     riichRate: 立直率

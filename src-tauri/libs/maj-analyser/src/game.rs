@@ -1,7 +1,6 @@
 use std::cell::RefCell;
 use std::collections::HashMap;
 use std::rc::Rc;
-use pai::FuroType;
 use tenhou_parser::maj_event::{MajEvent, NakiType};
 
 use crate::counter::Counter;
@@ -256,7 +255,13 @@ impl Game {
                                 counter.riichi_first += 1;
                             }
                             counter.riichi_total_junme += junme as u32;
+
                             counter.riichi_total_score += -1000;
+                            counter.lose_total_score += -1000;
+                            counter.be_tsumo_total_score += -1000;
+                            counter.draw_total_score += -1000;
+                            counter.win_total_score += -1000;
+                            counter.total_score += -1000;
                         } else {
                             if reached_lst.iter().any(|&x| x == i) {
                                 counter.riichi_followed += 1;
@@ -284,7 +289,24 @@ impl Game {
                         counter.total_score += diff_scores[i] as i64;
                         counter.draw_tenpai += if tenpai[i] { 1 } else { 0 };
                         counter.riichi_draw += if reached { 1 } else { 0 };
-                        counter.total_furo += if self.get_player(i as u8).furo.iter().filter(|e| if let MajEvent::Naki { r#type, .. } = e { r#type.ne(&NakiType::Ankan) } else { false }).count() > 0 { 1 } else { 0 };
+                        counter.total_furo += if self
+                            .get_player(i as u8)
+                            .furo
+                            .iter()
+                            .filter(|e| {
+                                if let MajEvent::Naki { r#type, .. } = e {
+                                    r#type.ne(&NakiType::Ankan)
+                                } else {
+                                    false
+                                }
+                            })
+                            .count()
+                            > 0
+                        {
+                            1
+                        } else {
+                            0
+                        };
                         if reached {
                             counter.riichi_total_score += diff_scores[i] as i64;
                         }
@@ -345,7 +367,9 @@ impl Game {
                                 counter.riichi_win += 1;
                                 counter.riichi_win_score += score as u64;
                                 counter.riichi_total_score += diff_scores[i] as i64;
-                                if yaku.contains(&Yaku::Ippatsu.into()) && yaku.contains(&Yaku::MenzeTsumo.into()) {
+                                if yaku.contains(&Yaku::Ippatsu.into())
+                                    && yaku.contains(&Yaku::MenzeTsumo.into())
+                                {
                                     counter.riichi_ippatsu_tsumo += 1;
                                 }
                             }
@@ -360,6 +384,11 @@ impl Game {
                             counter.lose_total_score += diff_scores[i] as i64;
                             counter.lose_total_junme += junme as u32;
                             counter.lose_riichi += if reached_arr[i] { 1 } else { 0 };
+                            counter.riichi_lose_score += if reached_arr[i] {
+                                diff_scores[i] as i64 - 1000
+                            } else {
+                                0
+                            };
                             counter.lose_menzen += if is_menzen_arr[i] { 1 } else { 0 };
                             counter.lose_furo += if !is_menzen_arr[i] { 1 } else { 0 };
                             counter.lose_to_riichi +=
@@ -418,13 +447,30 @@ impl Game {
                                 counter.be_tsumo_oya_total_score -= score as i64;
                                 if score >= 8000 {
                                     counter.be_tsumo_oya_mangan += 1;
-                                    counter.be_tsumo_oya_mangan_total_score -= score as i64;
+                                    counter.be_tsumo_oya_mangan_total_score += score as i64;
                                 }
                             }
                         } else {
                             counter.no_change += 1;
                         }
-                        counter.total_furo += if self.get_player(i as u8).furo.iter().filter(|e| if let MajEvent::Naki { r#type, .. } = e { r#type.ne(&NakiType::Ankan) } else { false }).count() > 0 { 1 } else { 0 };
+                        counter.total_furo += if self
+                            .get_player(i as u8)
+                            .furo
+                            .iter()
+                            .filter(|e| {
+                                if let MajEvent::Naki { r#type, .. } = e {
+                                    r#type.ne(&NakiType::Ankan)
+                                } else {
+                                    false
+                                }
+                            })
+                            .count()
+                            > 0
+                        {
+                            1
+                        } else {
+                            0
+                        };
                     }
                 }
             }

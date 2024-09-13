@@ -136,6 +136,8 @@ export interface Counter {
   riichi_win: number;
   /// 立直放铳次数
   riichi_lose: number;
+  /// 立直放铳点数
+  riichi_lose_score: number;
   /// 立直被自摸次数
   riichi_be_tsumo: number;
   /// 立直流局次数
@@ -161,6 +163,8 @@ export interface Counter {
 }
 
 export function computedCounters(c: Counter) {
+  console.log(c);
+
   return {
     basic: [
       {
@@ -168,7 +172,7 @@ export function computedCounters(c: Counter) {
         rounds: c.rounds,
         stableRate: Math.round((c.tot_rate / c.matches) * 40),
         roundIo: Math.round((c.total_score / c.rounds) * 100) / 100,
-        netIo: Math.round((c.win_score + c.lose_score) / c.rounds),
+        netIo: Math.round((c.win_score - c.lose_score) / c.rounds),
       },
       {
         rank1Rate: percentify(c.rank1 / c.matches),
@@ -176,6 +180,7 @@ export function computedCounters(c: Counter) {
         rank3Rate: percentify(c.rank3 / c.matches),
         rank4Rate: percentify(c.rank4 / c.matches),
         flyRate: percentify(c.tobi / c.matches),
+        avgRank: Math.round(((c.rank1 + c.rank2 * 2 + c.rank3 * 3 + c.rank4 * 4) / c.matches) * 100) / 100,
       },
       {
         winRate: percentify(c.wins / c.rounds),
@@ -199,6 +204,7 @@ export function computedCounters(c: Counter) {
         ronRate: percentify(c.win_ron / c.wins),
         winScore: Math.round(c.win_score / c.wins),
         winJunme: Math.round((c.win_total_junme / c.wins) * 100) / 100,
+        beTsumoOyaManganRate: percentify(c.be_tsumo_oya_mangan / c.be_tsumo),
       },
       {
         winRiichiRate: percentify(c.win_riichi / c.wins),
@@ -206,6 +212,7 @@ export function computedCounters(c: Counter) {
         winFuroRate: percentify(c.win_furo / c.wins),
         winOyaRate: percentify(c.win_oya / c.wins),
         winKoRate: percentify(c.win_ko / c.wins),
+        beTsumoOyaManganScore: Math.round(c.be_tsumo_oya_mangan_total_score / c.be_tsumo_oya_mangan),
       },
       {
         loseRate: percentify(c.loses / c.rounds),
@@ -223,19 +230,13 @@ export function computedCounters(c: Counter) {
         lossToDamaRate: percentify(c.lose_to_dama / c.loses),
         lossToFuroRate: percentify(c.lose_to_furo / c.loses),
       },
-      {
-        beTsumoOyaManganRate: percentify(c.be_tsumo_oya_mangan / c.be_tsumo),
-      },
-      {
-        beTsumoOyaManganScore: Math.round(c.be_tsumo_oya_mangan_total_score / c.be_tsumo_oya_mangan),
-      },
     ],
     riichi: [
       {
         riichRate: percentify(c.riichi / c.rounds),
         dblRiichiRate: percentify(c.riichi_double / c.riichi),
         riichScore: Math.round(c.riichi_win_score / c.riichi_win),
-        riichCost: Math.round((c.riichi_total_score - c.riichi_win_score) / c.riichi_lose),
+        riichCost: Math.round(c.riichi_lose_score / c.riichi_lose),
         riichIo: Math.round(c.riichi_total_score / c.riichi),
       },
       {

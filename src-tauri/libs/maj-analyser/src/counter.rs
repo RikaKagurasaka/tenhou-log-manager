@@ -128,6 +128,8 @@ pub struct Counter {
     pub riichi_draw: u32,
     /// 立直和了点数
     pub riichi_win_score: u64,
+    /// 立直放铳点数
+    pub riichi_lose_score: i64,
     /// 立直总收支
     pub riichi_total_score: i64,
     /// 一发自摸次数

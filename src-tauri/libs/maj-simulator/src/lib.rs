@@ -1,4 +1,5 @@
-pub mod yaku_judge;
+mod utils;
+mod single_simulator;
 
 pub fn add(left: usize, right: usize) -> usize {
     left + right
@@ -14,6 +15,3 @@ mod tests {
         assert_eq!(result, 4);
     }
 }
-
-
-pub use yaku_judge::{*};

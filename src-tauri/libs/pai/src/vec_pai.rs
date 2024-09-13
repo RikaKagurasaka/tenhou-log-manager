@@ -1,4 +1,3 @@
-use std::collections::HashMap;
 use std::fmt::Display;
 use crate::{BTreeCountMap, MonoChromatic};
 use crate::pai::{Pai, Suit};
@@ -29,7 +28,7 @@ impl IVecPai for Vec<Pai> {
     }
 
     fn represent(&self) -> String {
-        let suits = MonoChromatic::from_pai_vec(self);
+        let suits = MonoChromatic::from_iter(self);
         let mut s = String::new();
         for i in 0..4 {
             s += &suits[i].represent();

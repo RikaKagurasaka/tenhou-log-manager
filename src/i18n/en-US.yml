@@ -34,6 +34,7 @@ data:
     rank3Rate: Third Place Rate
     rank4Rate: Fourth Place Rate
     flyRate: Bust Rate
+    avgRank: Average Rank
     winRate: Win Rate
     loseRate: Discard Rate
     drawRate: Draw Rate
@@ -68,6 +69,8 @@ data:
     loseRiichiRate: Discard to Riichi Rate
     loseMenzenRate: Discard to Closed Hand Rate
     loseFuroRate: Discard to Open Meld Rate
+    beTsumoOyaManganRate: Dealer Be-Tsumo Mangan Rate
+    beTsumoOyaManganScore: Average Points of Dealer Be-Tsumo Mangan
   riichi:
     _title: Riichi
     riichRate: Riichi Rate

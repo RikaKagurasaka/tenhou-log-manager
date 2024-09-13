@@ -179,7 +179,7 @@ impl MonoChromatic {
 
     pub fn get_all_variants(&self, result: &mut Vec<MonoChromatic>) {
         result.clear();
-        for i in (1..=9) {
+        for i in 1..=9 {
             if self.get_pai_num(i) > 0 {
                 result.push({
                     let mut v = self.clone();
@@ -206,9 +206,9 @@ impl MonoChromatic {
         rs
     }
 
-    pub fn from_pai_vec(pais: &Vec<Pai>) -> [MonoChromatic; 4] {
+    pub fn from_iter<'a>(pais: impl IntoIterator<Item=&'a Pai>) -> [MonoChromatic; 4] {
         let mut rs = [MonoChromatic::from(0); 4];
-        for &pai in pais.iter() {
+        for &pai in pais.into_iter() {
             let suit = pai.get_suit();
             let num = pai.get_number();
             rs[(suit as u8 / 0x10 - 1) as usize].inc_pai_num(num);
@@ -216,4 +216,14 @@ impl MonoChromatic {
         rs
     }
 }
-
+impl<'a> FromIterator<&'a Pai> for [MonoChromatic; 4] {
+    fn from_iter<T: IntoIterator<Item=&'a Pai>>(iter: T) -> Self {
+        let mut rs = [MonoChromatic::from(0); 4];
+        for &pai in iter.into_iter() {
+            let suit = pai.get_suit();
+            let num = pai.get_number();
+            rs[(suit as u8 / 0x10 - 1) as usize].inc_pai_num(num);
+        }
+        rs
+    }
+} 
